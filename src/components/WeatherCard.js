@@ -1,58 +1,103 @@
-import React from "react";
+import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
+import FormGroup from "@material-ui/core/FormGroup";
+import TextField from "@material-ui/core/TextField";
+import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+import { WeatherContext } from "../context/WeatherContext";
+import WeatherDetails from "./WeatherDetails";
 
-const useStyles = makeStyles({
-  root: {
-    boxShadow: "none",
-    minWidth: 275,
+const WEATHER_API_URL = "http://localhost:3000/api/v1";
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    backgroundColor: "#7db4fc",
+    borderRadius: 6,
+    width: 380,
+    padding: 15,
+    marginBottom: 15,
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
+  searchNav: {
+    display: "flex",
+    padding: 10,
+    borderRadius: 6,
   },
-  title: {
-    fontSize: 14,
+  submitBtn: {
+    backgroundColor: "#363636",
+    color: "#FFF",
+    marginLeft: 10,
   },
-  pos: {
-    marginBottom: 12,
+  formGroup: {
+    justifyContent: "center",
+    flexDirection: "row",
+    paddingTop: 15,
   },
-});
+}));
 
-export default function SimpleCard() {
+// WeatherCard.propTypes = {
+//   classes: PropTypes.object.isRequired,
+// };
+
+export default function WeatherCard(props) {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+  const index = props.ix;
+  const { weather, setWeather } = useContext(WeatherContext);
+  const [city, setCity] = React.useState();
+
+  const fetchData = async (event) => {
+    event.preventDefault();
+    await getWeather(city);
+  };
 
   return (
-    <Card className={classes.root}>
-      <CardContent>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography>
-        <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+    <Paper className={classes.paper}>
+      <form onSubmit={fetchData} noValidate autoComplete="off">
+        <FormGroup className={classes.formGroup}>
+          <Paper elevation={0} className={classes.searchNav}>
+            <TextField
+              id="city_name"
+              label="City Name"
+              variant="outlined"
+              size="small"
+              onChange={(e) => {
+                setCity(e.target.value);
+              }}
+            />
+            <Button className={classes.submitBtn} type="submit">
+              Search
+            </Button>
+          </Paper>
+        </FormGroup>
+      </form>
+      <WeatherDetails data={weather[index]} />
+    </Paper>
   );
 }
+
+function getWeather(city) {
+  try {
+    return fetch(`${WEATHER_API_URL}/current/${city}`)
+      .then((res) => res.json())
+      .then((weather) => {
+        console.log(weather);
+      });
+  } catch (error) {
+    throw new Error("Error: " + error);
+  }
+}
+
+// function getForecast(city) {
+//   return fetch(
+//     `${process.env.REACT_APP_API_URL}/forecast/?q=${city}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`
+//   )
+//     .then((res) => handleResponse(res))
+//     .then((result) => {
+//       if (Object.entries(result).length) {
+//         const forecast = [];
+//         for (let i = 0; i < result.list.length; i += 8) {
+//           forecast.push(mapDataToWeatherInterface(result.list[i + 4]));
+//         }
+//         return forecast;
+//       }
+//     });
+// }
