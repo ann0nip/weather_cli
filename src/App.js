@@ -4,6 +4,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
 import WeatherCard from "./components/WeatherCard";
 
 import { WeatherContext } from "./context/WeatherContext";
@@ -26,6 +27,10 @@ function App() {
   const [weather, setWeather] = useState([{}]);
   const value = useMemo(() => ({ weather, setWeather }), [weather, setWeather]);
 
+  function addNewCity() {
+    setWeather([...weather, {}]);
+  }
+
   return (
     <WeatherContext.Provider value={value}>
       <Container maxWidth="lg">
@@ -33,6 +38,16 @@ function App() {
           <Typography className={classes.title} component="h1" align="center">
             Weather App
           </Typography>
+          <Grid
+            container
+            item
+            spacing={1}
+            style={{ justifyContent: "flex-end" }}
+          >
+            <Button onClick={addNewCity} variant="outlined" size="large">
+              New City
+            </Button>
+          </Grid>
           <Grid container spacing={1}>
             <Grid className={classes.gridCards} container item xs={12}>
               {weather.map((p, k) => {

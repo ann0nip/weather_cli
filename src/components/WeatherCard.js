@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import moment from "moment";
 import { makeStyles } from "@material-ui/core/styles";
 import FormGroup from "@material-ui/core/FormGroup";
 import TextField from "@material-ui/core/TextField";
@@ -16,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     width: 380,
     padding: 15,
     marginBottom: 15,
+    marginTop: 15,
   },
   searchNav: {
     display: "flex",
@@ -73,7 +75,9 @@ export default function WeatherCard(props) {
           </Paper>
         </FormGroup>
       </form>
-      <WeatherDetails data={weather[index]} />
+      {Object.keys(weather[index]).length > 0 && (
+        <WeatherDetails data={weather[index]} />
+      )}
     </Paper>
   );
 }
@@ -92,7 +96,21 @@ function getForecast(city = "") {
   try {
     return fetch(`${WEATHER_API_URL}/forecast/${city}`)
       .then((res) => res.json())
-      .then((forecast) => forecast);
+      .then((res) => {
+        let date = null;
+        // Each day has data every 3 hours, so I filter just one per day.
+        const forecast = res.list.filter((el) => {
+          const day = moment(el.dt_txt).format("DD");
+          if (day !== date) {
+            date = day;
+            return el;
+          }
+        });
+        // I noticed openweathermap return 6 days forecast
+        // because include the actual day. So, I just remove the first one.
+        forecast.shift();
+        return forecast;
+      });
   } catch (error) {
     throw new Error("Error: " + error);
   }
