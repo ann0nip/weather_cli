@@ -46,7 +46,11 @@ export default function WeatherCard(props) {
 
   const fetchData = async (event) => {
     event.preventDefault();
-    await getWeather(city);
+    const current = await getCurrent(city);
+    const forecast = await getForecast(city);
+    let weatherCopy = [...weather];
+    weatherCopy[index] = { current, forecast };
+    setWeather(weatherCopy);
   };
 
   return (
@@ -74,30 +78,22 @@ export default function WeatherCard(props) {
   );
 }
 
-function getWeather(city) {
+function getCurrent(city = "") {
   try {
     return fetch(`${WEATHER_API_URL}/current/${city}`)
       .then((res) => res.json())
-      .then((weather) => {
-        console.log(weather);
-      });
+      .then((weather) => weather);
   } catch (error) {
     throw new Error("Error: " + error);
   }
 }
 
-// function getForecast(city) {
-//   return fetch(
-//     `${process.env.REACT_APP_API_URL}/forecast/?q=${city}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`
-//   )
-//     .then((res) => handleResponse(res))
-//     .then((result) => {
-//       if (Object.entries(result).length) {
-//         const forecast = [];
-//         for (let i = 0; i < result.list.length; i += 8) {
-//           forecast.push(mapDataToWeatherInterface(result.list[i + 4]));
-//         }
-//         return forecast;
-//       }
-//     });
-// }
+function getForecast(city = "") {
+  try {
+    return fetch(`${WEATHER_API_URL}/forecast/${city}`)
+      .then((res) => res.json())
+      .then((forecast) => forecast);
+  } catch (error) {
+    throw new Error("Error: " + error);
+  }
+}
