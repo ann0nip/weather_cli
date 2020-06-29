@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders <ButtonComponent /> component 1`] = `
+<button
+  className="MuiButtonBase-root MuiButton-root MuiButton-text"
+  disabled={false}
+  onBlur={[Function]}
+  onDragLeave={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  <span
+    className="MuiButton-label"
+  />
+  <span
+    className="MuiTouchRipple-root"
+  />
+</button>
+`;
+
+exports[`<App /> renders <WeatherCard /> component 1`] = `
+<div
+  className="MuiContainer-root MuiContainer-maxWidthLg"
+>
+  <div
+    className="MuiBox-root MuiBox-root-3"
+  >
+    <h1
+      className="MuiTypography-root makeStyles-title-1 MuiTypography-body1 MuiTypography-alignCenter"
+    >
+      Weather App
+    </h1>
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-item"
+      style={
+        Object {
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeLarge MuiButton-sizeLarge"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          Add City
+        </span>
+      </button>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+    >
+      <div
+        className="MuiGrid-root makeStyles-gridCards-2 MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12"
+      >
+        <div
+          className="MuiPaper-root makeStyles-paper-4 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <div
+            className="MuiFormGroup-root makeStyles-formGroup-7"
+          >
+            <div
+              className="MuiPaper-root makeStyles-searchNav-5 MuiPaper-elevation0 MuiPaper-rounded"
+            >
+              <div
+                className="MuiFormControl-root MuiTextField-root"
+              >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense MuiInputLabel-outlined"
+                  data-shrink={false}
+                  htmlFor="city_name"
+                  id="city_name-label"
+                >
+                  City Name
+                </label>
+                <div
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                  onClick={[Function]}
+                >
+                  <input
+                    aria-invalid={false}
+                    autoFocus={false}
+                    className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                    disabled={false}
+                    id="city_name"
+                    onAnimationStart={[Function]}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    required={false}
+                    type="text"
+                  />
+                  <fieldset
+                    aria-hidden={true}
+                    className="PrivateNotchedOutline-root-8 MuiOutlinedInput-notchedOutline"
+                  >
+                    <legend
+                      className="PrivateNotchedOutline-legendLabelled-10"
+                    >
+                      <span>
+                        City Name
+                      </span>
+                    </legend>
+                  </fieldset>
+                </div>
+              </div>
+              <button
+                className="MuiButtonBase-root MuiButton-root MuiButton-text"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#363636",
+                    "color": "#FFF",
+                    "marginLeft": 10,
+                  }
+                }
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="MuiButton-label"
+                >
+                  Search
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

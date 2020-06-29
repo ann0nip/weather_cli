@@ -1,0 +1,230 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WeatherDetails /> render <WeatherDetails /> component 1`] = `
+<div
+  className="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-elevation1 MuiPaper-rounded"
+>
+  <div
+    className="MuiCardContent-root"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 MuiTypography-displayInline"
+    >
+      Buenos Aires
+      ,
+    </p>
+    <span>
+       
+    </span>
+    <p
+      className="MuiTypography-root MuiTypography-body1 MuiTypography-displayInline"
+    >
+      Jun 29, 2020
+    </p>
+    <br />
+    <h6
+      className="MuiTypography-root MuiTypography-h6 MuiTypography-displayInline"
+    >
+      Clouds
+      ,
+    </h6>
+    <span>
+       
+    </span>
+    <h6
+      className="MuiTypography-root MuiTypography-h6 MuiTypography-displayInline"
+    >
+      10
+       Cº
+    </h6>
+    <div
+      className="MuiCardMedia-root makeStyles-media-3"
+      style={
+        Object {
+          "backgroundImage": "url(\\"http://openweathermap.org/img/wn/04n@2x.png\\")",
+        }
+      }
+      title="broken clouds"
+    />
+    <ul
+      className="MuiList-root MuiList-padding"
+    >
+      <li
+        className="MuiListItem-root MuiListItem-gutters"
+        disabled={false}
+      >
+        <div
+          className="MuiListItemText-root"
+        >
+          <span
+            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+          >
+            Jun 30th
+          </span>
+        </div>
+        <div
+          className="MuiListItemText-root"
+        >
+          <span
+            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+          >
+            11 Cº
+          </span>
+        </div>
+        <div
+          className="MuiCardMedia-root makeStyles-forecastIcon-4"
+          style={
+            Object {
+              "backgroundImage": "url(\\"http://openweathermap.org/img/wn/10n@2x.png\\")",
+            }
+          }
+          title="moderate rain"
+        />
+      </li>
+      <hr
+        className="MuiDivider-root MuiDivider-middle"
+      />
+      <li
+        className="MuiListItem-root MuiListItem-gutters"
+        disabled={false}
+      >
+        <div
+          className="MuiListItemText-root"
+        >
+          <span
+            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+          >
+            Jul 1st
+          </span>
+        </div>
+        <div
+          className="MuiListItemText-root"
+        >
+          <span
+            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+          >
+            10 Cº
+          </span>
+        </div>
+        <div
+          className="MuiCardMedia-root makeStyles-forecastIcon-4"
+          style={
+            Object {
+              "backgroundImage": "url(\\"http://openweathermap.org/img/wn/10n@2x.png\\")",
+            }
+          }
+          title="moderate rain"
+        />
+      </li>
+      <hr
+        className="MuiDivider-root MuiDivider-middle"
+      />
+      <li
+        className="MuiListItem-root MuiListItem-gutters"
+        disabled={false}
+      >
+        <div
+          className="MuiListItemText-root"
+        >
+          <span
+            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+          >
+            Jul 2nd
+          </span>
+        </div>
+        <div
+          className="MuiListItemText-root"
+        >
+          <span
+            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+          >
+            8 Cº
+          </span>
+        </div>
+        <div
+          className="MuiCardMedia-root makeStyles-forecastIcon-4"
+          style={
+            Object {
+              "backgroundImage": "url(\\"http://openweathermap.org/img/wn/04n@2x.png\\")",
+            }
+          }
+          title="broken clouds"
+        />
+      </li>
+      <hr
+        className="MuiDivider-root MuiDivider-middle"
+      />
+      <li
+        className="MuiListItem-root MuiListItem-gutters"
+        disabled={false}
+      >
+        <div
+          className="MuiListItemText-root"
+        >
+          <span
+            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+          >
+            Jul 3rd
+          </span>
+        </div>
+        <div
+          className="MuiListItemText-root"
+        >
+          <span
+            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+          >
+            9 Cº
+          </span>
+        </div>
+        <div
+          className="MuiCardMedia-root makeStyles-forecastIcon-4"
+          style={
+            Object {
+              "backgroundImage": "url(\\"http://openweathermap.org/img/wn/04n@2x.png\\")",
+            }
+          }
+          title="overcast clouds"
+        />
+      </li>
+      <hr
+        className="MuiDivider-root MuiDivider-middle"
+      />
+      <li
+        className="MuiListItem-root MuiListItem-gutters"
+        disabled={false}
+      >
+        <div
+          className="MuiListItemText-root"
+        >
+          <span
+            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+          >
+            Jul 4th
+          </span>
+        </div>
+        <div
+          className="MuiListItemText-root"
+        >
+          <span
+            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+          >
+            10 Cº
+          </span>
+        </div>
+        <div
+          className="MuiCardMedia-root makeStyles-forecastIcon-4"
+          style={
+            Object {
+              "backgroundImage": "url(\\"http://openweathermap.org/img/wn/04n@2x.png\\")",
+            }
+          }
+          title="overcast clouds"
+        />
+      </li>
+      <hr
+        className="MuiDivider-root MuiDivider-middle"
+      />
+    </ul>
+  </div>
+</div>
+`;

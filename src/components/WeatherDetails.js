@@ -1,14 +1,16 @@
 import React from "react";
 import moment from "moment";
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  Divider,
+  List,
+  ListItem,
+  ListItemText,
+} from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
@@ -64,9 +66,9 @@ export default function WeatherDetails(props) {
           title={weather[0].description}
         />
         <List>
-          {forecast.map((el) => {
+          {forecast.map((el, k) => {
             return (
-              <div>
+              <React.Fragment key={k}>
                 <ListItem>
                   <ListItemText primary={moment(el.dt_txt).format("MMM Do")} />
                   <ListItemText
@@ -79,7 +81,7 @@ export default function WeatherDetails(props) {
                   />
                 </ListItem>
                 <Divider variant="middle" />
-              </div>
+              </React.Fragment>
             );
           })}
         </List>
