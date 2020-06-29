@@ -1,9 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
 import renderer from "react-test-renderer";
-import Typography from "@material-ui/core/Typography";
 import { data } from "./WeatherDetails.mock";
 import WeatherDetails from "../WeatherDetails";
+import CurrentComponent from "../CurrentComponent";
+import ForecastComponent from "../ForecastComponent";
 
 describe("<WeatherDetails />", () => {
   it("render <WeatherDetails /> component", () => {
@@ -11,8 +12,7 @@ describe("<WeatherDetails />", () => {
     expect(tree).toMatchSnapshot();
 
     const wrapper = shallow(<WeatherDetails data={data} />);
-    wrapper.find(Typography).first().text(data.city);
-
-    // TODO: Separate in a small component the Forecast section
+    expect(wrapper.find(CurrentComponent)).toHaveLength(1);
+    expect(wrapper.find(ForecastComponent)).toHaveLength(5);
   });
 });
