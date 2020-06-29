@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import FormGroup from "@material-ui/core/FormGroup";
 import TextField from "@material-ui/core/TextField";
@@ -43,9 +42,9 @@ const componentsStyles = {
   },
 };
 
-// WeatherCard.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
+/* TODO: This component still need Test. I found an issue with
+Enzyme and React.useContext. Im out of time for the deadline to figure out
+the workaround. https://github.com/enzymejs/enzyme/pull/2041 */
 
 export default function WeatherCard(props) {
   const classes = useStyles();

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ForecastComponent /> render <ForecastComponent /> component 1`] = `
+Array [
+  <li
+    className="MuiListItem-root MuiListItem-gutters"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        Jul 1st
+      </span>
+    </div>
+    <div
+      className="MuiListItemText-root"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        10 Cº
+      </span>
+    </div>
+    <div
+      className="MuiCardMedia-root makeStyles-forecastIcon-1"
+      style={
+        Object {
+          "backgroundImage": "url(\\"http://openweathermap.org/img/wn/10n@2x.png\\")",
+        }
+      }
+      title="light rain"
+    />
+  </li>,
+  <hr
+    className="MuiDivider-root MuiDivider-middle"
+  />,
+]
+`;
