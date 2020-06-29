@@ -4,7 +4,8 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
+
+import ButtonComponent from "./components/ButtonComponent";
 import WeatherCard from "./components/WeatherCard";
 
 import { WeatherContext } from "./context/WeatherContext";
@@ -44,9 +45,12 @@ function App() {
             spacing={1}
             style={{ justifyContent: "flex-end" }}
           >
-            <Button onClick={addNewCity} variant="outlined" size="large">
-              New City
-            </Button>
+            <ButtonComponent
+              onClick={addNewCity}
+              variant="outlined"
+              text="Add City"
+              size="large"
+            />
           </Grid>
           <Grid container spacing={1}>
             <Grid className={classes.gridCards} container item xs={12}>
