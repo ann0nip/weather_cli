@@ -16,6 +16,8 @@ function getForecast(city = "") {
     return fetch(`${WEATHER_API_URL}/forecast/${city}`)
       .then((res) => res.json())
       .then((res) => {
+        if (res.status === 503) return res;
+
         let date = null;
         // Each day has data every 3 hours, so I filter just one per day.
         const forecast = res.list.filter((el) => {

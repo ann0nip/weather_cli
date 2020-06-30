@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardContent, List } from "@material-ui/core";
+import { Card, CardContent, List, Typography } from "@material-ui/core";
 
 import CurrentComponent from "./CurrentComponent";
 import ForecastComponent from "./ForecastComponent";
@@ -10,6 +10,7 @@ const useStyles = makeStyles({
     boxShadow: "none",
     marginTop: 10,
     backgroundColor: "#7db4fc",
+    textAlign: "center",
   },
   title: {
     fontSize: 14,
@@ -26,6 +27,15 @@ const useStyles = makeStyles({
 export default function WeatherDetails(props) {
   const classes = useStyles();
   const { current, forecast } = props.data;
+
+  if (forecast.status === 503)
+    return (
+      <Card className={classes.root}>
+        <Typography variant="button" color="error">
+          {forecast.message}
+        </Typography>
+      </Card>
+    );
 
   return (
     <Card className={classes.root}>
